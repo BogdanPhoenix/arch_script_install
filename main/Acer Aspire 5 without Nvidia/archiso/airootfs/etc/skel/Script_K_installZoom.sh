@@ -2,8 +2,7 @@
 
 valid_choice=false
 variant="Gnome (G) or KDE (K)"
-config_file="~/.config/zoomus.conf"
-desktop_file="/usr/share/applications/Zoom.desktop"
+desktop_file="/var/lib/flatpak/exports/share/applications/us.zoom.Zoom.desktop"
 
 cd ~
 sudo pacman -S pipewire pipewire-media-session pipewire-alsa pipewire-jack pipewire-pulse pipewire-docs qpwgraph pipewire-v4l2 lib32-pipewire lib32-pipewire-jack
@@ -28,9 +27,6 @@ while [ "$valid_choice" = false ]; do
 done
 
 systemctl --user enable xdg-desktop-portal
-paru -S zoom
+sudo flatpak install flathub us.zoom.Zoom
 
-zoom
-sudo sed -i 's/^enableWaylandShare=.*/enableWaylandShare=true/' "$config_file"
-sudo sed -i 's|^Exec=/usr/bin/zoom %U$|Exec=env XDG_CURRENT_DESKTOP=gnome /usr/bin/zoom %U|' "$desktop_file"
-zoom
+#Додати даний рядок у файл desktop_file "env XDG_CURRENT_DESKTOP=gnome" перед "us.zoom.Zoom @@u %U @@"
