@@ -10,6 +10,9 @@ nameUser=$(arch-chroot /mnt ./Script_E_createUser.sh)
 rm /mnt/*.sh
 
 cp -r ../etc/skel/ /mnt/home/"$nameUser"/scripts
+chmod 744 /mnt/home/"$nameUser"/scripts/*.sh
+chown "$nameUser" /mnt/home/"$nameUser"/scripts/*.sh
+chgrp "$nameUser" /mnt/home/"$nameUser"/scripts/*.sh
 
 genfstab -U /mnt >> /mnt/etc/fstab
 
