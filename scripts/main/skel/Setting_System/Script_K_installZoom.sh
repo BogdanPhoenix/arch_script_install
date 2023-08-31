@@ -7,7 +7,7 @@ desktop_file="/var/lib/flatpak/exports/share/applications/us.zoom.Zoom.desktop"
 clear
 
 cd ~
-sudo pacman -S --noconfirm pipewire pipewire-media-session pipewire-alsa pipewire-jack pipewire-pulse pipewire-docs qpwgraph pipewire-v4l2 lib32-pipewire lib32-pipewire-jack
+sudo pacman -S pipewire pipewire-media-session pipewire-alsa pipewire-jack pipewire-pulse pipewire-docs qpwgraph pipewire-v4l2 lib32-pipewire lib32-pipewire-jack
 systemctl --user enable pipewire.socket pipewire-pulse.service pipewire-media-session.service
 
 while [ "$valid_choice" = false ]; do
@@ -16,11 +16,11 @@ while [ "$valid_choice" = false ]; do
     case $choice in
         [Gg]*)
             valid_choice=true
-            sudo pacman -S --noconfirm xdg-desktop-portal xdg-desktop-portal-gnome xdg-desktop-portal-gtk
+            sudo pacman -S xdg-desktop-portal xdg-desktop-portal-gnome xdg-desktop-portal-gtk
             ;;
         [Kk]*)
             valid_choice=true
-            sudo pacman -S --noconfirm xdg-desktop-portal xdg-desktop-portal-kde
+            sudo pacman -S xdg-desktop-portal xdg-desktop-portal-kde
             ;;
         *)
             echo "Wrong option. Please select $variant."

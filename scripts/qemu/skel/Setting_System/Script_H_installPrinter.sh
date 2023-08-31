@@ -4,12 +4,13 @@
 nameUser="$USER"
 
 clear
+echo "brother-hll2300d"
 read -p "Enter name printer: " printName
 
-paru -S --noconfirm cups
+paru -S cups
 
 sudo systemctl enable --now cups
 sudo usermod -aG lp $nameUser
 
-paru -S --noconfirm $printName
-paru -S --noconfirm system-config-printer
+paru -S $printName
+paru -S system-config-printer

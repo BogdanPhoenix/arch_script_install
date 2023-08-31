@@ -1,11 +1,6 @@
 #!/bin/bash
 
 path="/home/$USER/scripts/Setting_System"
-# fileExtension="$path/*.sh"
-
-# sudo chown $USER $fileExtension
-# sudo chgrp $USER $fileExtension
-# chmod 744 $fileExtension
 
 #Working correctly
 "$path"/Script_C_optimizationDemons.sh
@@ -14,6 +9,7 @@ path="/home/$USER/scripts/Setting_System"
 "$path"/Script_F_opengl.sh
 "$path"/Script_G_installParu.sh
 "$path"/Script_H_installPrinter.sh
+"$path"/Script_I_settingBluetooth.sh
 
 "$path"/Script_K_installZoom.sh
 "$path"/Script_L_installQEMU.sh
@@ -21,7 +17,7 @@ path="/home/$USER/scripts/Setting_System"
 "$path"/Script_D_flathub.sh
 
 #Not working correctly
-#"$path"/Script_I_settingBluetooth.sh
+#
 
 #Under question
 #"$path"/Script_J_installZSH.sh

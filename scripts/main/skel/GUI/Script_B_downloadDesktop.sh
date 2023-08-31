@@ -12,22 +12,22 @@ while [ "$valid_choice" = false ]; do
     case $choice in
         [Gg]*)
             valid_choice=true
-            sudo pacman -S --noconfirm xorg xorg-server gnome gnome-extra gdm xdg-desktop-portal xdg-desktop-portal-gnome xdg-desktop-portal-gtk
+            sudo pacman -S xorg xorg-server gnome gnome-extra gdm xdg-desktop-portal xdg-desktop-portal-gnome xdg-desktop-portal-gtk
 			systemctl enable gdm
             ;;
         [Kk]*)
             valid_choice=true
-            sudo pacman -S --noconfirm xorg xorg-server plasma plasma-wayland-session egl-wayland sddm sddm-kcm packagekit-qt5 xdg-user-dirs konsole xdg-desktop-portal xdg-desktop-portal-kde kate dolphin spectacle gwenview okular
+            sudo pacman -S xorg xorg-server plasma plasma-wayland-session egl-wayland sddm sddm-kcm packagekit-qt5 xdg-user-dirs konsole xdg-desktop-portal xdg-desktop-portal-kde kate dolphin spectacle gwenview okular
 			sudo systemctl enable sddm
             ;;
         [Cc]*)
             valid_choice=true
-            sudo pacman -S --noconfirm xorg xorg-server cinnamon
+            sudo pacman -S xorg xorg-server cinnamon
 			sudo systemctl enable gdm
             ;;
         [Mm]*)
             valid_choice=true
-            sudo pacman -S --noconfirm xorg xorg-server mate mate-extra mate-panel mate-session-manager
+            sudo pacman -S xorg xorg-server mate mate-extra mate-panel mate-session-manager
 			sudo systemctl enable mdm
             ;;
         *)
@@ -36,7 +36,7 @@ while [ "$valid_choice" = false ]; do
     esac
 done
 
-sudo pacman -S --noconfirm pipewire pipewire-media-session pipewire-alsa pipewire-jack pipewire-pulse pipewire-docs qpwgraph pipewire-v4l2 lib32-pipewire lib32-pipewire-jack gparted ark htop cmake archiso
+sudo pacman -S pipewire pipewire-media-session pipewire-alsa pipewire-jack pipewire-pulse pipewire-docs qpwgraph pipewire-v4l2 lib32-pipewire lib32-pipewire-jack gparted ark htop cmake archiso
 systemctl --user enable pipewire.socket pipewire-pulse.service pipewire-media-session.service
 
 reboot

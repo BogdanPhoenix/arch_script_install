@@ -19,6 +19,9 @@ rm -r "$directoryScripts"/name.txt
 cp -r ../etc/skel/setting/ /mnt/home/"$nameUser"/scripts
 chmod 744 /mnt/home/"$nameUser"/scripts/*.sh
 
+echo "Enter please..."
+read -n 1 -s
+
 genfstab -U /mnt >> /mnt/etc/fstab
 
 umount -a

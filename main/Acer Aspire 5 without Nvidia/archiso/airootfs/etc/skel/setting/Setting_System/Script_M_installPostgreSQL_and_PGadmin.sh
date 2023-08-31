@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo pacman -S --noconfirm postgresql
+sudo pacman -S postgresql
 
 sudo -u postgres bash -c "initdb -D /var/lib/postgres/data"
 
@@ -16,7 +16,7 @@ pip install pgadmin4
 
 cat << EOF > /home/$USER/pgadminStart.sh
 #!/bin/bash
-source pgadmin4/bin/activate
+source /var/lib/pgadmin/pgadmin4/bin/activate
 pgadmin4
 EOF
 
